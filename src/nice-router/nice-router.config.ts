@@ -11,7 +11,7 @@ export interface AppConfiguration {
   api: Record<string, string>;
   backendRouterPageBlackList: string[];
   backendRouterPageKeyBlackList: string[];
-  loginMode?: 'wechat' | 'vcode' | 'password';
+  loginMode?: 'wechat' | 'mobile' | 'account';
   start?: (config: AppConfiguration, container: any) => void;
   get?: (key: string) => any;
 }

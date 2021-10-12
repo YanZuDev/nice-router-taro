@@ -1,36 +1,16 @@
-import { useEffect } from 'react';
-import EleCarousel from '@/components/elements/ele-carousel';
-import ActionFloor from '@/components/biz/action-floor';
-import SectionBar from '@/components/section-bar/section-bar';
-import Listof from '@/listof/listof';
-import { useAjaxPullDown, usePageTitle } from '@/service/use-service';
+import { useEffect, useState } from 'react';
 import { View } from '@tarojs/components';
-import { useSelector } from 'react-redux';
-import NavigationService from '@/nice-router/navigation-service';
 
 import './home.scss';
+import NavigationService from '@/nice-router/navigation-service';
 
 function HomePage(props) {
-  const root = useSelector((state) => state.home);
-  usePageTitle(root);
-  useAjaxPullDown(props);
-
+  const [info, setInfo] = useState({});
   useEffect(() => {
-    NavigationService.ajax('mock-home-page/');
+    NavigationService.ajax('system/user/list', {}, { onSuccess: setInfo });
   }, []);
 
-  const { slideList = [], actionList = [], productList = [] } = root;
-
-  return (
-    <View className='home-page'>
-      <EleCarousel className='home-page-carousel' items={slideList} />
-      <View className='home-page-action-floor'>
-        <ActionFloor actionList={actionList} />
-        <SectionBar title='促销抢购' linkToUrl='page:///pages/biz/listof-test-page' />
-        <Listof list={productList} displayMode='product' />
-      </View>
-    </View>
-  );
+  return <View className='home-page'>{JSON.stringify(info)}</View>;
 }
 
 export default HomePage;

@@ -42,9 +42,9 @@ const OptionsProcessor = (chain) => {
   const requestHeader = {
     ...requestParams.headers,
   };
-  if (method.toLocaleLowerCase() === 'post') {
-    requestHeader['Content-Type'] = 'application/x-www-form-urlencoded';
-  }
+  // if (method.toLocaleLowerCase() === 'post') {
+  //   requestHeader['Content-Type'] = 'application/x-www-form-urlencoded';
+  // }
   const nextParams = {
     ...requestParams,
     url,

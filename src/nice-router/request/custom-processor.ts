@@ -28,7 +28,7 @@ const CustomProcessor = async (chain) => {
       return {
         xClass,
         xNavigationMethod,
-        data,
+        data: data?.data || data,
         message: statusText,
         status,
         headers: responseHeaders,

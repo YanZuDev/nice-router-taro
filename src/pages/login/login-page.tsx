@@ -1,37 +1,17 @@
-import { useEffect, useState } from 'react';
 import ServerImage from '@/server-image/server-image';
-import { ApiConfig } from '@/utils/config';
 import { Text, View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
-import NavigationService from '@/nice-router/navigation-service';
 import Config from '@/nice-router/nice-router.config';
-import { isWeapp } from '@/utils/index';
 
 import loginLogo from '../../assets/login-logo.png';
 import VCodeLoginForm from './vcode-login-from';
 import PasswordLoginForm from './password-login-from';
 import WechatLoginForm from './wechat-login-form';
 import './login.scss';
+import { useVisible } from '@/service/use-service';
+import WechatMobileLoginForm from './wechat-mobile-login-from';
 
 export default function LoginPage() {
-  const [wxLoginSuccess, setWxLoginSuccess] = useState(false);
-
-  useEffect(() => {
-    if (isWeapp()) {
-      Taro.login({
-        success: (res) => {
-          console.log('doooooologin');
-          NavigationService.ajax(
-            ApiConfig.WxLogin,
-            { code: res.code },
-            {
-              onSuccess: () => setWxLoginSuccess(true),
-            }
-          );
-        },
-      });
-    }
-  }, []);
+  const { visible, toggle } = useVisible(false);
 
   return (
     <View className='login-page'>
@@ -47,8 +27,9 @@ export default function LoginPage() {
         <View className='form-form-title'>欢迎登录</View>
 
         {Config.loginMode === 'wechat' && <WechatLoginForm />}
-        {Config.loginMode === 'vcode' && <VCodeLoginForm disabled={!wxLoginSuccess} />}
-        {Config.loginMode === 'password' && <PasswordLoginForm />}
+        {Config.loginMode === 'mobile' && visible && <WechatMobileLoginForm onSwitch={toggle} />}
+        {Config.loginMode === 'mobile' && !visible && <VCodeLoginForm onSwitch={toggle} />}
+        {Config.loginMode === 'account' && <PasswordLoginForm />}
       </View>
     </View>
   );
