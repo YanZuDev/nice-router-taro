@@ -1,12 +1,12 @@
 const ViewMappingConfig = {
-  'com.terapico.appview.MePage': {
+  'com.tiandtech.appview.MePage': {
     pageName: '/pages/me/me-page',
     stateAction: 'me/save',
   },
   LoginForm: {
     pageName: '/pages/login/login-page',
   },
-  'com.terapico.appview.HomePage': {
+  'com.tiandtech.appview.HomePage': {
     pageName: '/pages/home/home-page',
     stateAction: 'home/save',
   },

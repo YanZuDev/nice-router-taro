@@ -4,13 +4,12 @@ import ViewMappingConfig from '@/utils/viewmapping.config';
 const baseURL = 'http://localhost:8080/'; //后端服务地址
 
 const ApiConfig = {
-  FooterHome: 'wxappService/viewHomepage/',
-  FooterMe: 'wxappService/customerViewDashboard/',
+  FooterHome: 'app/viewHomePage',
+  FooterMe: 'app/viewMePage',
   Login: 'clientLogin',
-  WxLogin: 'clientLogin',
-  VerifyCode: 'sendVerifyCode/:mobile',
+  VerifyCode: 'viewVerifyCode/:mobile',
   OSSToken: 'wxappService/customGetOssToken/',
-  Logout: 'wxappService/logout/',
+  Logout: 'logout/',
 };
 
 const TheCustomizedProjectConfigurationDontUseItDirectly: Omit<AppConfiguration, 'start'> = {

@@ -7,7 +7,7 @@
 header中指定x-class
 
 ```java
-x-class= com.terapico.appview.LoginForm
+x-class= com.tiandtech.appview.LoginForm
 ```
 
 #### 类似”点赞“这种Ajax如何处理呢？
@@ -25,7 +25,7 @@ x-class= com.terapico.appview.LoginForm
 在viewmapping.config下配置新的页面就行了
 
 ```javascript
-  'com.terapico.appview.LoginForm': {    
+  'com.tiandtech.appview.LoginForm': {    
       pageName: '/your-new-pate-path',  
   },
 ```

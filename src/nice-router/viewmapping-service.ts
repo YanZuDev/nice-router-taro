@@ -10,7 +10,7 @@ export type ViewConfigItemType = {
 type ViewConfigType = Record<string, ViewConfigItemType | ViewConfigItemType[]>;
 
 const defaultViewConfig: ViewConfigType = {
-  'com.terapico.appview.H5Page': {
+  'com.tiandtech.appview.H5Page': {
     pageName: 'H5Page',
     stateAction: '/nice-router/h5-page',
   },
@@ -18,7 +18,7 @@ const defaultViewConfig: ViewConfigType = {
     pageName: '/nice-router/network-exception-page',
   },
   // global pages
-  'com.terapico.caf.viewcomponent.GenericPage': [
+  'com.tiandtech.appview.GenericPage': [
     {
       pageName: '/genericpage/generic-page',
       stateAction: 'genericpage/save',
@@ -28,11 +28,11 @@ const defaultViewConfig: ViewConfigType = {
       stateAction: 'genericpage2/save',
     },
   ],
-  'com.terapico.caf.viewcomponent.GenericFormPage': {
+  'com.tiandtech.appview.GenericFormPage': {
     pageName: '/genericform/genericform-page',
     stateAction: 'genericform/save',
   },
-  'com.terapico.appview.ListOfPage': [
+  'com.tiandtech.appview.ListOfPage': [
     {
       pageName: '/listof/listof-page',
       stateAction: ['listofpage/save', 'listofpage2/clear'],
@@ -51,7 +51,7 @@ const defaultViewConfig: ViewConfigType = {
     },
   ],
 
-  'com.terapico.appview.ObjectPickerPage': {
+  'com.tiandtech.appview.ObjectPickerPage': {
     pageName: '/genericform/object-picker-page',
     stateAction: 'objectPicker/saveInbound',
   },

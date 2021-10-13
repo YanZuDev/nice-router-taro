@@ -50,7 +50,7 @@
    举个栗子：首页的carousel有个图片是双11促销，点击以后跳转到一个促销商品列表。
 - 点击图片-> NavigationService.view('....')发送后台请求。
 
-- 后台response返回listof的数据，且header中需要包含x-class = "com.terapico.appview.ListOfPage"。
+- 后台response返回listof的数据，且header中需要包含x-class = "com.tiandtech.appview.ListOfPage"。
 
 - nice-router则会自动跳转到ListofPage.
 

@@ -45,6 +45,7 @@ const LineItem_Navigator_List = [
 ];
 
 function MePage() {
+  // @ts-ignore
   const root = useSelector((state) => state.me);
   const [footerActionList, setFooterActionList] = useState<EleButtonProps[]>([]);
 
@@ -52,7 +53,7 @@ function MePage() {
 
   usePageTitle(root);
   usePullDown(ApiConfig.FooterMe);
-  useDidShow(refresh, []);
+  useDidShow(refresh);
 
   const handleGoLogin = () => NavigationService.navigate('/pages/login/login-page');
   const handleLogout = () => {
