@@ -23,8 +23,8 @@ const TheCustomizedProjectConfigurationDontUseItDirectly: Omit<AppConfiguration,
   backendRouterPageBlackList: ['NetworkException'],
   viewConfig: ViewMappingConfig,
   // loginMode: 'wechat',
-  loginMode: 'mobile', //包含绑定的微信登录
-  // loginMode: 'account',
+  // loginMode: 'mobile', //包含绑定的微信登录
+  loginMode: 'account',
 };
 
 console.log('***********   current env  ***********   ');
