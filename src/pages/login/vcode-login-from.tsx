@@ -9,7 +9,7 @@ import './login.scss';
 import LoginUtils from './login-utils';
 
 export default function VCodeLoginForm(props) {
-  const { onSwitch = noop } = props;
+  const { onSwitch = noop, onSubmit, submitText = '登录' } = props;
 
   const [mobile, setMobile] = useState();
   const [verifyCode, setVerifyCode] = useState<any>();
@@ -20,7 +20,8 @@ export default function VCodeLoginForm(props) {
       code: verifyCode,
       loginMethod: 'mobile_vcode',
     };
-    LoginUtils.remoteLogin({ params });
+    const remoteCall = onSubmit ? onSubmit : LoginUtils.remoteLogin;
+    remoteCall({ params });
   };
 
   const handleSendCodeSuccess = (resp) => {
@@ -59,7 +60,7 @@ export default function VCodeLoginForm(props) {
       </View>
 
       <EleButton className='login-button' onClick={handleSubmit}>
-        登录
+        {submitText}
       </EleButton>
     </>
   );

@@ -26,7 +26,6 @@ export default function PasswordForm() {
     }
   };
 
-
   return (
     <>
       <View className='login-form-fields'>

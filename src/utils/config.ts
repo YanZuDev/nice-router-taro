@@ -7,6 +7,7 @@ const ApiConfig = {
   FooterHome: 'app/viewHomePage',
   FooterMe: 'app/viewMePage',
   Login: 'clientLogin',
+  BindMobile: 'bindMobile',
   VerifyCode: 'viewVerifyCode/:mobile',
   OSSToken: 'wxappService/customGetOssToken/',
   Logout: 'logout/',

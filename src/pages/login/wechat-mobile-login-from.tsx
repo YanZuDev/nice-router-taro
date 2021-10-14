@@ -1,15 +1,14 @@
 import { View } from '@tarojs/components';
 import { useEffect, useState } from 'react';
-import { noop } from '@/nice-router/nice-router-util';
+import { isEmpty, noop } from '@/nice-router/nice-router-util';
 import EleButton from '@/components/elements/ele-button';
 
 import './login.scss';
 import LoginUtils from './login-utils';
-import AuthTools from '@/nice-router/auth-tools';
 import GlobalToast from '@/nice-router/global-toast';
 
 export default function WechatMobileLoginForm(props) {
-  const { onShowVCode = noop } = props;
+  const { onShowVCode = noop, onSubmit } = props;
 
   const [code, setCode] = useState('');
 
@@ -18,17 +17,19 @@ export default function WechatMobileLoginForm(props) {
   }, []);
 
   const handleSubmit = async (e) => {
-    const theTokenIsLoginToken = await AuthTools.isLoginToken();
-    console.log('Is an validate login token??', theTokenIsLoginToken);
-
     const onCompleted = () => LoginUtils.getCode().then(setCode);
     const { encryptedData, iv } = e.detail;
+    if (isEmpty(encryptedData)) {
+      console.log('用户拒绝了授权');
+      return;
+    }
     const params = { encryptedData, iv, code, loginMethod: 'wechat_mobile' };
     try {
       await LoginUtils.getWxObj().checkSession();
-      LoginUtils.remoteLogin({ params, onCompleted });
-    } catch (e) {
-      GlobalToast.show({ text: '登录失败，稍后重试！' });
+      const remoteCall = onSubmit ? onSubmit : LoginUtils.remoteLogin;
+      remoteCall({ params, onCompleted });
+    } catch (err) {
+      GlobalToast.show({ text: '微信登录失败，稍后重试！' });
       onCompleted();
     }
   };

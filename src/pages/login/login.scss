@@ -88,3 +88,13 @@
     color: $white;
   }
 }
+
+.bind-mobile {
+  .login-page-body {
+    padding-top: 20vh;
+  }
+  .login-form-brief {
+    font-size: 60px;
+    color: #fff;
+  }
+}

@@ -38,7 +38,7 @@ function showError({ xClass, data = {} }: HttpResponse) {
   // @ts-ignore
   const { msg, localizedMessage, messageList = [], message } = data;
 
-  const text = msg || localizedMessage || message || messageList.map((msg) => msg.body).join('\n');
+  const text = msg || localizedMessage || message || messageList.map((it) => it.body).join('\n');
   if (isNotEmpty(text)) {
     GlobalToast.show({ text, duration: 5000 });
     return;

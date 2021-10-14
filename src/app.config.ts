@@ -1,5 +1,6 @@
 export default {
   pages: [
+    'pages/login/bind-mobile-page',
     'pages/home/home-page',
     'pages/login/login-page',
     'pages/me/me-page',
