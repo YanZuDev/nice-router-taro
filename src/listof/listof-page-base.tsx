@@ -66,7 +66,7 @@ function ListofPageBase(props: listofPageBaseProps) {
 
   const {
     tabs,
-    list,
+    items,
     listMeta,
     displayMode,
     emptyMessage,
@@ -102,7 +102,7 @@ function ListofPageBase(props: listofPageBaseProps) {
       <View id='listof-header'>{renderHeader ? renderHeader() : theHeader}</View>
       <Listof
         dataContainer={dataContainer}
-        list={list}
+        items={items}
         listMeta={listMeta}
         displayMode={displayMode}
         emptyMessage={emptyMessage}

@@ -10,13 +10,13 @@ import { enrichListOfEntity } from '../utils';
 import ListofUtil from './listof-util';
 import './listof.scss';
 import FlexLineItem, { FlexLineItemProps } from './templates/flex-line-item';
+import { ActionLike } from '@/nice-router/nice-router-types';
 
 export type ListofProps = {
-  list?: FlexLineItemProps[];
   items?: FlexLineItemProps[];
   emptyMessage?: string;
   dataContainer?: Record<string, any>;
-  listMeta?: Record<string, any>;
+  listMeta?: ActionLike;
   displayMode?: string;
   onItemClick?: Function;
   horizontal?: boolean;
@@ -28,10 +28,9 @@ export type ListofProps = {
 
 function Listof(props: ListofProps) {
   const { loading, showLoading, hideLoading } = useLoading(false);
-  const { list, items, emptyMessage } = props;
-  const theList: any[] = list || items || [];
+  const { items = [], emptyMessage } = props;
 
-  if (isEmpty(theList)) {
+  if (isEmpty(items)) {
     if (isEmpty(emptyMessage)) {
       return null;
     }
@@ -45,7 +44,7 @@ function Listof(props: ListofProps) {
   //longList=无限循环list 展示footer
   let showFooter = longList;
   //但是，如果没有下一页，且list比较小, 就不展示footer了
-  if (!hasNextPage && theList.length < 15) {
+  if (!hasNextPage && items.length < 15) {
     showFooter = false;
   }
 
@@ -64,7 +63,7 @@ function Listof(props: ListofProps) {
         onSuccess: () => {
           hideLoading();
         },
-      }
+      },
     );
   };
 
