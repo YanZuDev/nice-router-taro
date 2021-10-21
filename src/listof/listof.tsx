@@ -63,12 +63,12 @@ function Listof(props: ListofProps) {
         onSuccess: () => {
           hideLoading();
         },
-      },
+      }
     );
   };
 
   // @ts-ignore
-  const flexLineItems = enrichListOfEntity({ dataContainer, targetList: theList });
+  const flexLineItems = enrichListOfEntity({ dataContainer, targetList: items });
 
   const itemWidth = ListofUtil.getItemWidth(displayMode);
   const rootClass = getExtMode({ horizontal }, mode).classNames('listof-view', className);

@@ -298,9 +298,9 @@ const homePageData = {
 
 const initial = () => {
   MockService.mockResp('mock-home-page/', 'com.tiandtech.appview.HomePage', homePageData);
-  MockService.mockResp('mock-generic-form/', 'com.terapico.caf.viewcomponent.GenericFormPage', mockForm1Data);
-  MockService.mockResp('mock-generic-form-2/', 'com.terapico.caf.viewcomponent.GenericFormPage', mockForm2Data);
-  MockService.mockResp('mock-generic-page/', 'com.terapico.caf.viewcomponent.GenericPage', mockGenericPageData);
+  MockService.mockResp('mock-generic-form/', 'com.tiandtech.appview.GenericFormPage', mockForm1Data);
+  MockService.mockResp('mock-generic-form-2/', 'com.tiandtech.appview.GenericFormPage', mockForm2Data);
+  MockService.mockResp('mock-generic-page/', 'com.tiandtech.appview.GenericPage', mockGenericPageData);
   MockService.mockResp('mock-listof-test/', 'xx', {
     singleItemList: [userList[0]],
     productList,

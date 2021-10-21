@@ -24,9 +24,15 @@
     }
 
     &-logo {
-      margin-bottom: 20px;
-      width: 150px;
-      height: 82px;
+      padding: 14px;
+      border-radius: 20px;
+      background-color: #fff;
+      @extend %flex-center;
+
+      .server-image {
+        width: 140px;
+        height: 140px;
+      }
     }
   }
 
@@ -93,6 +99,7 @@
   .login-page-body {
     padding-top: 20vh;
   }
+
   .login-form-brief {
     font-size: 60px;
     color: #fff;

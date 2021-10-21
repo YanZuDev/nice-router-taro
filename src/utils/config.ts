@@ -1,7 +1,8 @@
 import { AppConfiguration } from '@/nice-router/nice-router.config';
 import ViewMappingConfig from '@/utils/viewmapping.config';
 
-const baseURL = 'http://localhost:8080/'; //后端服务地址
+// const baseURL = 'http://localhost:8080/'; //后端服务地址
+const baseURL = 'https://www.tiandtech.com/api/'; //后端服务地址
 
 const ApiConfig = {
   FooterHome: 'app/viewHomePage',

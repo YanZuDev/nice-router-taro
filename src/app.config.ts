@@ -1,7 +1,7 @@
 export default {
   pages: [
-    'pages/login/bind-mobile-page',
     'pages/home/home-page',
+    'pages/login/bind-mobile-page',
     'pages/login/login-page',
     'pages/me/me-page',
     // 'pages/biz/listof-test-page', // 有问题

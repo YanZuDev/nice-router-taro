@@ -19,7 +19,9 @@ export default function LoginPage() {
         <View className='login-page-header-txt'>
           <Text>{Config.name}</Text>
         </View>
-        <ServerImage className='login-page-header-logo' src={loginLogo} />
+        <View className='login-page-header-logo'>
+          <ServerImage src={loginLogo} />
+        </View>
       </View>
 
       <View className='login-page-body'>

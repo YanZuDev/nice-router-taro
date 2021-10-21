@@ -29,7 +29,7 @@ function HomePage(props) {
       <View className='home-page-action-floor'>
         <ActionFloor actionList={actionList} />
         <SectionBar title='促销抢购' linkToUrl='page:///pages/biz/listof-test-page' />
-        <Listof list={productList} displayMode='product' />
+        <Listof items={productList} displayMode='product' />
       </View>
     </View>
   );
