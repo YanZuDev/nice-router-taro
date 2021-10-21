@@ -15,7 +15,7 @@ const ApiConfig = {
 };
 
 const TheCustomizedProjectConfigurationDontUseItDirectly: Omit<AppConfiguration, 'start'> = {
-  name: 'NiceRouter App Start',
+  name: 'Tixwork',
   baseURL,
   version: 1,
   appType: 'mini-program',

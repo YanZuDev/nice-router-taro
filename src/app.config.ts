@@ -44,7 +44,7 @@ export default {
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#28aaff',
-    navigationBarTitleText: 'nice-router',
+    navigationBarTitleText: 'Tixwork',
     navigationBarTextStyle: 'white',
     enablePullDownRefresh: true,
   },
