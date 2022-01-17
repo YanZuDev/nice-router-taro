@@ -6,7 +6,7 @@ import { usePageTitle, usePullDown } from '@/service/use-service';
 import { ApiConfig } from '@/utils/config';
 import { View } from '@tarojs/components';
 import { useSelector } from 'react-redux';
-import { useDidShow } from '@tarojs/runtime';
+import { useDidShow } from '@tarojs/taro';
 import NavigationService from '@/nice-router/navigation-service';
 import { isNotEmpty } from '@/nice-router/nice-router-util';
 import EleActionList from '@/components/elements/action-list/ele-action-list';
