@@ -9,7 +9,7 @@ const ApiConfig = {
   FooterMe: 'app/viewMePage',
   Login: 'clientLogin',
   BindMobile: 'bindMobile',
-  VerifyCode: 'viewVerifyCode/:mobile',
+  VerifyCode: 'verifyCode/:mobile',
   OSSToken: 'wxappService/customGetOssToken/',
   Logout: 'logout/',
 };
